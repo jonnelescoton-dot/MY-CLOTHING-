@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyClothing – Wear Your Style</title>
+  <meta name="description" content="MyClothing – Premium fashion for men and women. Wear Your Style.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">M</span>
+        MyClothing
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="shop.html?category=men" class="nav-link">Men</a>
+        <a href="shop.html?category=women" class="nav-link">Women</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="openCart()" aria-label="Cart">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="badge cart-count" style="display:none">0</span>
+        </button>
+        <button class="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="shop.html?category=men" class="nav-link">Men</a>
+      <a href="shop.html?category=women" class="nav-link">Women</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">New Season Collection</span>
+        <h1>Wear Your Style, Express Yourself.</h1>
+        <p>Discover premium clothing designed for the modern wardrobe. Quality fabrics, timeless cuts, and effortless elegance—made for everyday confidence.</p>
+        <div class="hero-btns">
+          <a href="shop.html" class="btn btn-accent">Shop Now</a>
+          <a href="shop.html" class="btn btn-outline">Explore Collection</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&h=900&fit=crop" alt="Fashion model">
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Shop by Category</h2>
+      <p class="section-subtitle fade-in">Find your perfect look</p>
+      <div class="categories">
+        <a href="shop.html?category=men" class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500&h=700&fit=crop" alt="Men's Clothing">
+          <div class="category-overlay">
+            <h3>Men's</h3>
+            <span>Shirts, Jackets & More</span>
+          </div>
+        </a>
+        <a href="shop.html?category=women" class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&h=700&fit=crop" alt="Women's Clothing">
+          <div class="category-overlay">
+            <h3>Women's</h3>
+            <span>Dresses, Tops & More</span>
+          </div>
+        </a>
+        <a href="shop.html?category=jackets" class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=700&fit=crop" alt="Jackets">
+          <div class="category-overlay">
+            <h3>Jackets</h3>
+            <span>Outerwear Essentials</span>
+          </div>
+        </a>
+        <a href="shop.html?category=dresses" class="category-card fade-in">
+          <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=700&fit=crop" alt="Dresses">
+          <div class="category-overlay">
+            <h3>Dresses</h3>
+            <span>Effortless Elegance</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title fade-in">New Arrivals</h2>
+      <p class="section-subtitle fade-in">Fresh pieces just landed</p>
+      <div class="products-grid" id="new-arrivals"></div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="shop.html" class="btn btn-outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Best Sellers</h2>
+      <p class="section-subtitle fade-in">Customer favourites</p>
+      <div class="products-grid" id="best-sellers"></div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="promo-banner fade-in">
+        <div class="promo-content">
+          <h2>Season Sale – Up to 30% Off</h2>
+          <p>Selected styles on limited-time discount. Elevate your wardrobe with premium pieces at exceptional value.</p>
+          <a href="shop.html" class="btn btn-accent">Shop the Sale</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">What Our Customers Say</h2>
+      <p class="section-subtitle fade-in">Real reviews from real style lovers</p>
+      <div class="testimonials">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The quality is outstanding. My oxford shirt feels like it was made for me—perfect fit and fabric that lasts."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Carlos">
+            <div>
+              <strong>Carlos M.</strong>
+              <span>Manila</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Finally found a brand that understands modern Filipino fashion. The midi dress is pure elegance."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Sofia">
+            <div>
+              <strong>Sofia R.</strong>
+              <span>Cebu</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Fast shipping, beautiful packaging, and clothes that actually look like the photos. Will definitely order again."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Miguel">
+            <div>
+              <strong>Miguel T.</strong>
+              <span>Quezon City</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon">M</span>
+            MyClothing
+          </a>
+          <p>Wear Your Style. Premium fashion designed for confidence, comfort, and everyday elegance.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.227-8.451L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="shop.html?category=men">Men's Clothing</a>
+          <a href="shop.html?category=women">Women's Clothing</a>
+          <a href="shop.html">New Arrivals</a>
+          <a href="shop.html">Best Sellers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Shipping & Returns</a>
+          <a href="#">Size Guide</a>
+          <a href="#">FAQ</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MyClothing. All rights reserved.</span>
+        <span>Wear Your Style.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const newArrivals = PRODUCTS.filter(p => p.isNew || p.badges.includes("new")).slice(0, 4);
+      const bestSellers = PRODUCTS.filter(p => p.badges.includes("best")).slice(0, 4);
+
+      document.getElementById("new-arrivals").innerHTML = newArrivals.map(renderProductCard).join("");
+      document.getElementById("best-sellers").innerHTML = bestSellers.map(renderProductCard).join("");
+      initAnimations();
+      Wishlist.updateUI();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop – MyClothing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">M</span>
+        MyClothing
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="shop.html" class="nav-link active">Shop</a>
+        <a href="shop.html?category=men" class="nav-link">Men</a>
+        <a href="shop.html?category=women" class="nav-link">Women</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="openCart()" aria-label="Cart">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="badge cart-count" style="display:none">0</span>
+        </button>
+        <button class="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="shop.html?category=men" class="nav-link">Men</a>
+      <a href="shop.html?category=women" class="nav-link">Women</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Shop Collection</h1>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> · Shop
+      </div>
+    </div>
+  </div>
+
+  <div class="container shop-layout">
+    <aside class="shop-filters">
+      <div class="filter-group">
+        <h4>Category</h4>
+        <label class="filter-option"><input type="radio" name="category" value="all" checked> All Products</label>
+        <label class="filter-option"><input type="radio" name="category" value="men"> Men's Clothing</label>
+        <label class="filter-option"><input type="radio" name="category" value="women"> Women's Clothing</label>
+        <label class="filter-option"><input type="radio" name="category" value="tshirts"> T-Shirts</label>
+        <label class="filter-option"><input type="radio" name="category" value="hoodies"> Hoodies</label>
+        <label class="filter-option"><input type="radio" name="category" value="jackets"> Jackets</label>
+        <label class="filter-option"><input type="radio" name="category" value="pants"> Pants</label>
+        <label class="filter-option"><input type="radio" name="category" value="dresses"> Dresses</label>
+        <label class="filter-option"><input type="radio" name="category" value="tops"> Tops</label>
+      </div>
+      <div class="filter-group">
+        <h4>Size</h4>
+        <label class="filter-option"><input type="checkbox" name="size" value="XS"> XS</label>
+        <label class="filter-option"><input type="checkbox" name="size" value="S"> S</label>
+        <label class="filter-option"><input type="checkbox" name="size" value="M"> M</label>
+        <label class="filter-option"><input type="checkbox" name="size" value="L"> L</label>
+        <label class="filter-option"><input type="checkbox" name="size" value="XL"> XL</label>
+      </div>
+      <div class="filter-group">
+        <h4>Price</h4>
+        <label class="filter-option"><input type="radio" name="price" value="all" checked> All Prices</label>
+        <label class="filter-option"><input type="radio" name="price" value="0-1500"> Under ₱1,500</label>
+        <label class="filter-option"><input type="radio" name="price" value="1500-3000"> ₱1,500 – ₱3,000</label>
+        <label class="filter-option"><input type="radio" name="price" value="3000+"> ₱3,000+</label>
+      </div>
+    </aside>
+
+    <div class="shop-main">
+      <div class="shop-toolbar">
+        <div class="search-box">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="search" id="search-input" placeholder="Search products...">
+        </div>
+        <select class="sort-select" id="sort-select">
+          <option value="default">Sort by: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name">Name: A–Z</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+        <span class="results-count" id="results-count"></span>
+      </div>
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="logo-icon">M</span> MyClothing</a>
+          <p>Wear Your Style. Premium fashion designed for confidence, comfort, and everyday elegance.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="shop.html?category=men">Men's Clothing</a>
+          <a href="shop.html?category=women">Women's Clothing</a>
+          <a href="shop.html">New Arrivals</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Shipping & Returns</a>
+          <a href="#">Size Guide</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MyClothing. All rights reserved.</span>
+        <span>Wear Your Style.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let filtered = [...PRODUCTS];
+
+    function applyFilters() {
+      const category = document.querySelector('input[name="category"]:checked')?.value || "all";
+      const sizes = [...document.querySelectorAll('input[name="size"]:checked')].map(el => el.value);
+      const price = document.querySelector('input[name="price"]:checked')?.value || "all";
+      const search = document.getElementById("search-input").value.toLowerCase().trim();
+      const sort = document.getElementById("sort-select").value;
+
+      filtered = PRODUCTS.filter(p => {
+        if (category !== "all" && p.category !== category && p.subcategory !== category) return false;
+        if (sizes.length && !sizes.some(s => p.sizes.includes(s))) return false;
+        if (price === "0-1500" && p.price >= 1500) return false;
+        if (price === "1500-3000" && (p.price < 1500 || p.price > 3000)) return false;
+        if (price === "3000+" && p.price < 3000) return false;
+        if (search && !p.name.toLowerCase().includes(search) && !p.description.toLowerCase().includes(search)) return false;
+        return true;
+      });
+
+      if (sort === "price-asc") filtered.sort((a, b) => a.price - b.price);
+      else if (sort === "price-desc") filtered.sort((a, b) => b.price - a.price);
+      else if (sort === "name") filtered.sort((a, b) => a.name.localeCompare(b.name));
+      else if (sort === "rating") filtered.sort((a, b) => b.rating - a.rating);
+
+      renderGrid();
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById("products-grid");
+      document.getElementById("results-count").textContent = `${filtered.length} product${filtered.length !== 1 ? "s" : ""}`;
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:60px;color:var(--gray)">No products match your filters.</p>`;
+        return;
+      }
+      grid.innerHTML = filtered.map(renderProductCard).join("");
+      initAnimations();
+      Wishlist.updateUI();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get("category");
+      if (cat) {
+        const radio = document.querySelector(`input[name="category"][value="${cat}"]`);
+        if (radio) radio.checked = true;
+      }
+
+      document.querySelectorAll('input[name="category"], input[name="size"], input[name="price"]').forEach(el => {
+        el.addEventListener("change", applyFilters);
+      });
+      document.getElementById("search-input").addEventListener("input", applyFilters);
+      document.getElementById("sort-select").addEventListener("change", applyFilters);
+
+      applyFilters();
+    });
+  </script>
+</body>
+</html>
